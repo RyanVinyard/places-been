@@ -1,0 +1,21 @@
+<h1>Where the heck have I been?!</h1>
+
+#if ($places)
+  <ul>
+    #foreach ($place in $places)
+      <li>$place.getDescription()</li>
+    #end
+  </ul>
+#else
+  <p>You've been nowhere yet!</p>
+#end
+
+<p>Add a new place:</p>
+
+<form action="/places" method="post">
+  <div class="form-group">
+    <label for="description">Tell me where!</label>
+    <input id="description" name="description" type="text">
+  </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
